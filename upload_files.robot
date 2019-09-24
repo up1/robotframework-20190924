@@ -13,6 +13,18 @@ Library   SeleniumLibrary
     ทำการ upload file data_03.png ต้องสำเร็จ
 
 *** Keywords ***
+ทำการ upload file data_03.png ต้องสำเร็จ
+    Click Element  
+    ...   xpath://table/tbody/tr[3]/td[5]/button[1]
+    Wait Until Page Contains Element
+    ...   xpath://div[@style="width: 100%;"]
+    
+ทำการ upload file data_02.png ต้องสำเร็จ
+    Click Element  
+    ...   xpath://table/tbody/tr[2]/td[5]/button[1]
+    Wait Until Page Contains Element
+    ...   xpath://div[@style="width: 67%;"]
+
 ทำการ upload file data_01.png ต้องสำเร็จ
     Click Element  
     ...   xpath://table/tbody/tr[1]/td[5]/button[1]
