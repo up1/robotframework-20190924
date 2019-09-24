@@ -6,16 +6,23 @@ Library     String
 
 *** Test Cases ***
 ค้นหาคำว่าเหล็กไหล
+    [Tags]  done
+    เข้าไปยังหน้าค้นหาของ google
+    ค้นหาเหล็กไหล
+    จะต้องเจอดูเหล็กไหล
+
+ค้นหาคำว่าเหล็กไหล 2
+    [Tags]  testing
     เข้าไปยังหน้าค้นหาของ google
     ค้นหาเหล็กไหล
     จะต้องเจอดูเหล็กไหล
 
 *** Keywords ***
 จะต้องเจอดูเหล็กไหล
-    Wait Until Element Contains
-    ...  xpath://*[@id="tvcap"]/div/div/div/div/h3/span
-    ...  ดูเหล็กไหล
-    
+    # Wait Until Element Contains
+    # ...  xpath://*[@id="tvcap"]/div/div/div/div/h3/span
+    # ...  ดูเหล็กไหล
+
     ${results}=  Get Text  id:resultStats
     @{resultSplit}=  Split String   
     ...  ${results}
