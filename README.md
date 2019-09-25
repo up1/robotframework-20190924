@@ -9,3 +9,4 @@
 * Test template
 * Resources
 * Page Object Pattern
+* API Testing
