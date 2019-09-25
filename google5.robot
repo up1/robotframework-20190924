@@ -1,14 +1,8 @@
 *** Settings ***
-Library          SeleniumLibrary
-Library          String
 Resource         resources/googles.robot
 Suite Setup      googles.เข้าไปยังหน้าค้นหาของ google
 Suite Teardown   Close Browser
 Default Tags     v5
-
-*** Variables ***
-${URL}   http://www.google.com
-${XXX}   ${EMPTY}
 
 *** Test Cases ***
 XXXX

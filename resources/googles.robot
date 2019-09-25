@@ -1,3 +1,11 @@
+*** Settings ***
+Library          SeleniumLibrary
+Library          String
+
+*** Variables ***
+${URL}   http://www.google.com
+${XXX}   ${EMPTY}
+
 *** Keywords ***
 กลับไปยังหน้าค้นหา
     Go To   ${URL}

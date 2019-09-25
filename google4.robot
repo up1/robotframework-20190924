@@ -1,16 +1,10 @@
 *** Settings ***
-Library          SeleniumLibrary
-Library          String
 Resource         resources/googles.robot
 Suite Setup      เข้าไปยังหน้าค้นหาของ google
 Suite Teardown   Close Browser
 Test Teardown    กลับไปยังหน้าค้นหา
 Test Template    Flow search in google
 Default Tags     v4
-
-*** Variables ***
-${URL}   http://www.google.com
-${XXX}   ${EMPTY}
 
 *** Test Cases ***
 #    name       #    keyword   # Expected result
