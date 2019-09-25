@@ -1,6 +1,7 @@
 .DS_Store
 demo_system/
 driver/
+stubby/
 *.html
 *.xml
 *.png
