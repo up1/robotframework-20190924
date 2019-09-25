@@ -51,20 +51,6 @@
 				}
 			},
 			"response": []
-		},
-		{
-			"name": "Step2",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{EMAIL}}",
-					"host": [
-						"{{EMAIL}}"
-					]
-				}
-			},
-			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
