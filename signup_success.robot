@@ -1,5 +1,7 @@
 *** Settings ***
 Library  SeleniumLibrary
+Resource  pages/signup_page.robot
+Resource  pages/thankyou_page.robot
 Test Teardown   Close Browser
 
 *** Test Case ***
@@ -11,18 +13,17 @@ Test Teardown   Close Browser
 
 *** Keywords ***
 กรอกชื่อ "${firstname}" นามสกุล​ "${lastname}"
-    Open Browser  
-    ...  https://www.kimschiller.com/page-object-pattern-tutorial/
-    ...  browser=chrome
-    Input Text   id:firstname    ${firstname}
-    Input Text   id:lastname    ${lastname}
+    signup_page.Open
+    signup_page.Check signup page
+    signup_page.Fill in firstname ${firstname}
+    signup_page.Fill in lastname ${lastname}
 
 กรอกข้อมูลที่อยู่ "${address}" "${zipcode}"
-    Input Text   id:address    ${address}
-    Input Text   id:zipcode    ${zipcode}
+    signup_page.Fill in address ${address}
+    signup_page.Fill in zipcode ${zipcode}
 
 ทำการส่งข้อมูลการสมัคร
-    Click Element   id:signup
+    signup_page.Sign up
 
 ผลการสมัครสำเร็จ ต้องแสดงคำว่า "Thank you!"
-    Wait Until Page Contains    Thank you!
+    thankyou_page.Check welcome message
