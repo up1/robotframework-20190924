@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "4cb3e575-6b40-4bff-9649-f0f6de43aa28",
+		"name": "Flow01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Step1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "62d8b953-d4fc-4dcf-930c-326b7fd5eeee",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Your test name\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.length).to.eql(500);",
+							"    pm.expect(jsonData[0].id).to.eql(1);",
+							"    pm.expect(jsonData[0].email).to.eql(\"Eliseo@gardner.biz\");",
+							"    pm.globals.set(\"EMAIL\", jsonData[0].email);",
+							"    ",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/comments",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{EMAIL}}",
+					"host": [
+						"{{EMAIL}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
